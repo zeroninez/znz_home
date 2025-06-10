@@ -25,7 +25,7 @@
         "name": "next"
       }
     ],
-    "types": ["@react-three/fiber"] // React Three Fiber 타입 추가
+    "types": []
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/components/Frame"],
   "exclude": ["node_modules"]
