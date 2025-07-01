@@ -101,7 +101,7 @@ export const Header = () => {
                 onClick={() => handlePage('')}
                 className='p-1 cursor-pointer md:hover:opacity-70 active:scale-95 transition'
               >
-                <Logo size='lg' className='' />
+                <Logo size='md' className='' />
               </div>
               <div
                 onClick={() => setIsModalOpen(false)}
