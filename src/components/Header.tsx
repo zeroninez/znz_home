@@ -51,48 +51,29 @@ export const Header = () => {
           height: isMobile ? HEADER_HEIGHT_MOBILE : HEADER_HEIGHT_PC,
         }}
         className={classNames(
-          'fixed top-0 left-0 z-30 w-full px-4 py-3 flex flex-row items-start justify-between text-white',
+          'fixed top-0 left-0 z-30 w-full px-6 md:px-12 py-3 flex flex-row items-center justify-between text-white',
           'mix-blend-difference',
         )}
       >
         <div onClick={() => handlePage('')} className='p-1 cursor-pointer hover:opacity-70 active:scale-95 transition'>
-          <Logo size='lg' className='bg-white' />
+          <Logo size='lg' />
         </div>
-        <div className='hidden md:flex flex-row justify-between items-start w-1/2 md:w-1/3 h-fit'>
-          <div className=' flex flex-col justify-start items-start w-1/2 h-fit'>
-            {
-              //pages에서 Index, About, Contact만 가져오기
-              pages.slice(0, 2).map((page, index) => (
-                <div
-                  key={index}
-                  onClick={() => handlePage(page.path)}
-                  className={classNames(
-                    'cursor-pointer hover:opacity-70 active:scale-95 transition',
-                    pathname === `/` + page.path ? 'opacity-50' : 'opacity-100',
-                  )}
-                >
-                  {page.name}
-                </div>
-              ))
-            }
-          </div>
-          <div className='flex flex-col justify-start items-start w-1/2 h-fit'>
-            {
-              //pages에서 Index, About, Contact만 가져오기
-              pages.slice(2, 4).map((page, index) => (
-                <div
-                  key={index}
-                  onClick={() => handlePage(page.path)}
-                  className={classNames(
-                    'cursor-pointer hover:opacity-70 active:scale-95 transition',
-                    pathname === `/` + page.path ? 'opacity-50' : 'opacity-100',
-                  )}
-                >
-                  {page.name}
-                </div>
-              ))
-            }
-          </div>
+        <div className='hidden md:flex flex-row justify-between items-start w-fit gap-6'>
+          {
+            //pages에서 Index, About, Contact만 가져오기
+            pages.map((page, index) => (
+              <div
+                key={index}
+                onClick={() => handlePage(page.path)}
+                className={classNames(
+                  'cursor-pointer hover:opacity-70 active:scale-95 transition',
+                  pathname === `/` + page.path ? 'opacity-50' : 'opacity-100',
+                )}
+              >
+                {page.name}
+              </div>
+            ))
+          }
         </div>
         <div
           onClick={() => setIsModalOpen(!isModalOpen)}
@@ -120,7 +101,7 @@ export const Header = () => {
                 onClick={() => handlePage('')}
                 className='p-1 cursor-pointer md:hover:opacity-70 active:scale-95 transition'
               >
-                <Logo size='lg' className='bg-white' />
+                <Logo size='lg' className='' />
               </div>
               <div
                 onClick={() => setIsModalOpen(false)}
@@ -129,41 +110,22 @@ export const Header = () => {
                 Close
               </div>
             </div>
-            <div className='w-full h-fit flex flex-row justify-between items-center px-4 pt-8'>
-              <div className=' flex flex-col justify-start items-start w-1/2 h-fit'>
-                {
-                  //pages에서 Index, About, Contact만 가져오기
-                  pages.slice(0, 2).map((page, index) => (
-                    <div
-                      key={index}
-                      onClick={() => handlePage(page.path)}
-                      className={classNames(
-                        'cursor-pointer hover:opacity-70 active:scale-95 transition p-2',
-                        pathname === page.path ? 'opacity-70' : 'opacity-100',
-                      )}
-                    >
-                      {page.name}
-                    </div>
-                  ))
-                }
-              </div>
-              <div className='flex flex-col justify-start items-start w-1/2 h-fit'>
-                {
-                  //pages에서 Index, About, Contact만 가져오기
-                  pages.slice(2, 4).map((page, index) => (
-                    <div
-                      key={index}
-                      onClick={() => handlePage(page.path)}
-                      className={classNames(
-                        'cursor-pointer hover:opacity-70 active:scale-95 transition p-2',
-                        pathname === page.path ? 'opacity-70' : 'opacity-100',
-                      )}
-                    >
-                      {page.name}
-                    </div>
-                  ))
-                }
-              </div>
+            <div className='w-full h-fit flex flex-col gap-4 p-6'>
+              {
+                //pages에서 Index, About, Contact만 가져오기
+                pages.map((page, index) => (
+                  <div
+                    key={index}
+                    onClick={() => handlePage(page.path)}
+                    className={classNames(
+                      'cursor-pointer hover:opacity-70 active:scale-95 transition',
+                      pathname === `/` + page.path ? 'opacity-50' : 'opacity-100',
+                    )}
+                  >
+                    {page.name}
+                  </div>
+                ))
+              }
             </div>
             <div className='absolute bottom-0 left-0 w-fit h-fit flex flex-row justify-center items-center px-4 pb-5'>
               <p className='text-xl leading-none'>© 2025 zeroninez.</p>
