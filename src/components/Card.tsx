@@ -59,7 +59,7 @@ export const Card = ({
       </div>
       {/* 카드 내용 */}
       <div className='w-full h-fit flex flex-col gap-3 items-start justify-start bg-white pb-4'>
-        <span className='text-xl md:text-2xl leading-tight'>{properties.title}</span>
+        <span className='text-lg md:text-xl leading-tight font-medium'>{properties.title}</span>
         {/* 마지막 수정 시간 */}
         <div className='w-full h-fit flex flex-row items-center justify-start gap-2 text-xs text-gray-500'>
           {/* <p className=''>{'작성자'}</p> */}

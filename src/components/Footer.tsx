@@ -20,7 +20,7 @@ export const Footer = () => {
     <div className='w-full h-fit bg-footer px-6 md:px-12 py-12 flex flex-col gap-32 bg-black text-white items-center justify-between'>
       <div className='w-full flex flex-row items-center justify-between'>
         <div onClick={() => router.push('/')} className='cursor-pointer hover:opacity-70 active:scale-95 transition'>
-          <Logo className='' size='lg' />
+          <Logo className='' size='md' />
         </div>
       </div>
       <div className='w-full flex flex-row items-end justify-between'>

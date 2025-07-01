@@ -70,46 +70,22 @@ function Item({ item, index, setSelected }: ItemProps) {
         )}
 
         {/* 📝 텍스트 섹션 */}
-        <div className='w-full bottom-0 left-0 absolute p-3 space-y-1.5 backdrop-blur-sm text-black'>
+        <motion.div className='w-full h-full bottom-0 flex flex-col justify-end items-start left-0 absolute p-3 space-y-1.5 text-black opacity-0 hover:opacity-100 transition-opacity duration-300'>
           {/* 제목 */}
-          <motion.h3
-            className='font-medium text-base leading-tight transition-colors duration-200'
-            whileHover={{ x: 2 }}
-            transition={{ duration: 0.2 }}
-          >
-            {item.properties.title}
-          </motion.h3>
+          <motion.h3 className='font-medium text-base leading-tight0'>{item.properties.name}</motion.h3>
 
-          {/* 서브타이틀 */}
-          {item.properties.subtitle && (
-            <p className='text-sm opacity-70 leading-relaxed line-clamp-2'>{item.properties.subtitle}</p>
-          )}
-
-          {/* 메타 정보 */}
-          <div className='flex items-center justify-between pt-1'>
-            <span className='text-xs uppercase tracking-wide font-medium'>{item.properties.category}</span>
-
-            {/* 화살표 아이콘 */}
-            <motion.div
-              className='opacity-0 group-hover:opacity-100 transition-opacity duration-200'
-              whileHover={{ x: 2 }}
-            >
-              <svg
-                className='w-4 h-4 transition-colors duration-200'
-                fill='none'
-                stroke='currentColor'
-                viewBox='0 0 24 24'
-              >
-                <path
-                  strokeLinecap='round'
-                  strokeLinejoin='round'
-                  strokeWidth={1.5}
-                  d='M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14'
-                />
-              </svg>
-            </motion.div>
-          </div>
-        </div>
+          {/* 화살표 아이콘 */}
+          <motion.div className=''>
+            <svg className='w-4 h-4' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
+              <path
+                strokeLinecap='round'
+                strokeLinejoin='round'
+                strokeWidth={1.5}
+                d='M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14'
+              />
+            </svg>
+          </motion.div>
+        </motion.div>
       </div>
     </motion.article>
   )

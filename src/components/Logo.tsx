@@ -11,10 +11,10 @@ export const Logo = ({ className = '', size = 'md' }: LogoProps) => {
       className={classNames(
         ' h-fit w-fit font-bold',
         className ? className : '',
-        size === 'sm' ? 'text-xl' : size === 'md' ? 'text-2xl' : 'text-3xl',
+        size === 'sm' ? 'text-lg' : size === 'md' ? 'text-2xl' : 'text-8xl',
       )}
     >
-      ZERONINEZ
+      zeroninez
     </div>
   )
 }

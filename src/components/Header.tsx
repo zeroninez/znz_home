@@ -29,8 +29,8 @@ export const Header = () => {
 
   const pages = [
     { name: 'About', path: 'about' },
-    { name: 'Contact', path: 'contact' },
     { name: 'Projects', path: 'projects' },
+    { name: 'Contact', path: 'contact' },
   ]
 
   const handlePage = (page: string) => {
@@ -56,7 +56,7 @@ export const Header = () => {
         )}
       >
         <div onClick={() => handlePage('')} className='p-1 cursor-pointer hover:opacity-70 active:scale-95 transition'>
-          <Logo size='lg' />
+          <Logo size='md' />
         </div>
         <div className='hidden md:flex flex-row justify-between items-start w-fit gap-6'>
           {
